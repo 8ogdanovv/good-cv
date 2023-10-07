@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>redirect based on prefers-color-scheme</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body>
+  <script>
+    // Check if the user prefers dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // Set redirect tab background to black if black is preferred by user agent
+      document.body.style.backgroundColor = 'black';
+      // Redirect to the dark theme URL
+      window.location.href = 'https://drive.google.com/file/d/1NViHuiK9yeHlmwMqPJpQWNfeeeZ5Tryc/view?usp=sharing';
+    } else {
+      // Redirect to the default theme URL
+      window.location.href = 'https://drive.google.com/file/d/1UdTI0yHYKpH8-UHW3Q006hP-qLDbWhrv/view';
+    }
+  </script>
+</body>
+</html>
